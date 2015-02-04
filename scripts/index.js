@@ -1,6 +1,6 @@
 'use strict';
 
 var React = require('react'),
-    App = require('./app');
+    PasswordGenerator = require('./password-generator');
 
-React.render(<App />, document.body);
+React.render(<PasswordGenerator />, document.getElementById('main-app'));
