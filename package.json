@@ -34,6 +34,7 @@
     "webpack-dev-server": "1.6.4"
   },
   "dependencies": {
+    "l33t-substitution": "^0.1.0",
     "markov-words": "~0.2.0",
     "react": "^0.12.2"
   }

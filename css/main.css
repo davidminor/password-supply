@@ -158,9 +158,79 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+li {
+    list-style:none;
+}
 
+label {
+    margin-right:2em;
+    margin-bottom:1em;
+    font-size:1.2em;
+    display:inline-block;
+}
 
+input[type=text] {
+    padding:.1em .5em;
+    border:3px solid gray;
+    width:3em;
+    -webkit-appearance:none;
+    appearance:none;
+    transition: border-color 0.3s;
+}
 
+input[type=text]:focus {
+  outline:none;
+  -webkit-box-shadow: inset 1px 1px 1px #ccc;
+  -moz-box-shadow:    inset 1px 1px 1px #ccc;
+  box-shadow:         inset 1px 1px 1px #ccc;
+  border-color: #6496c8;
+}
+
+.console {
+  background-color: #eee;
+  padding: 2em;
+  padding-bottom: 0;
+}
+
+.actions {
+  background-color: #ddd;
+  padding:1em;
+}
+
+.password {
+    display:inline-block;
+    margin-right:8em;
+}
+
+button {
+  display: inline-block;
+  margin: 0;
+  padding: .5em 1em;
+  font-size: 1.2em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: #6496c8;
+  background: white;
+  border: solid 4px #6496c8;
+}
+
+button:focus {
+  outline: none
+}
+
+button:hover, button.hover {
+  border-color: #346392;
+  color: #346392;
+}
+
+button:active, button.active {
+  border-color: #27496d;
+  color: #27496d;
+}
 
 
 
