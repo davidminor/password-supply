@@ -62,7 +62,11 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px 'Roboto Slab', serif;
+}
+
+h1, h2, h3, h4, h5, button {
+    font-family: 'Oswald', sans-serif;
 }
 
 .wrapper {
@@ -75,22 +79,22 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid #f16529;
 }
 
 .footer-container,
 .main aside {
-    border-top: 20px solid #e44d26;
+    border-top: 20px solid #f16529;
 }
 
 .header-container,
 .footer-container,
 .main aside {
-    background: #f16529;
+    background: #222;
 }
 
 .title {
-    color: white;
+    color: #00d8ff;
 }
 
 /* ==============
@@ -202,6 +206,11 @@ input[type=text]:focus {
     margin-right:8em;
 }
 
+.tagline {
+    display:none;
+    padding-left:1em;
+}
+
 button {
   display: inline-block;
   margin: 0;
@@ -300,6 +309,10 @@ button:active, button.active {
 
     .title {
         float: left;
+    }
+
+    .tagline {
+        display: block;
     }
 
     nav {

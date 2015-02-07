@@ -39,8 +39,8 @@ var PasswordList = React.createClass({
     return this.createState(this.props.length, this.props.number);
   },
   componentWillReceiveProps: function(nextProps) {
-    if (this.props.length !== nextProps.length || 
-        this.props.number !== nextProps.number) {
+    if (this.props.length != nextProps.length || 
+        this.props.number != nextProps.number) {
       this.setState(this.createState(nextProps.length, nextProps.number));
     }
   },
@@ -64,7 +64,7 @@ var PasswordList = React.createClass({
 var PasswordGenerator = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
   getInitialState: function() {
-    return {length: 10, number: 20, substitute: false};
+    return {length: 10, number: 24, substitute: false};
   },
   handleRefresh: function() {
     this.refs.passwordList.refresh();
@@ -79,7 +79,7 @@ var PasswordGenerator = React.createClass({
             <input type="text" valueLink={this.linkState('number')} />
           </label> <label>
             <input type="checkbox" checkedLink={this.linkState('substitute')} />
-            {' '}Numbers & Symbols
+            {' '}Numbers &amp; Symbols
           </label>
         </div>
         <div className="actions">
