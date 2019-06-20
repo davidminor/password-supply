@@ -10,12 +10,15 @@ var React = require('react/addons'),
 
 var Password = React.createClass({
   render: function() {
+    var text = this.props.text;
+    if (this.props.capitalize) {
+      text = text.charAt(0).toUpperCase() + text.substring(1);
+    }
     if (this.props.substitute) {
-      return <code>{l33t(this.props.text, 2)}{' '}</code>
-    } else {
-      return <code>{this.props.text}{' '}</code>
+      text = l33t(text, 2);
     }
 
+    return <code>{text}{' '}</code>
   }
 });
 
@@ -49,11 +52,12 @@ var PasswordList = React.createClass({
   },
   render: function() {
     var substitute = this.props.substitute;
+    var capitalize = this.props.capitalize;
     return <div>
              <ul>
                {this.state.items.map(function(item) {
                  return <li className="password">
-                          <Password text={item} substitute={substitute} />
+                          <Password text={item} substitute={substitute} capitalize={capitalize} />
                         </li>
                })}
              </ul>
@@ -64,7 +68,7 @@ var PasswordList = React.createClass({
 var PasswordGenerator = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
   getInitialState: function() {
-    return {length: 10, number: 24, substitute: false};
+    return {length: 10, number: 24, substitute: false, capitalize: false};
   },
   handleRefresh: function() {
     this.refs.passwordList.refresh();
@@ -80,6 +84,9 @@ var PasswordGenerator = React.createClass({
           </label> <label>
             <input type="checkbox" checkedLink={this.linkState('substitute')} />
             {' '}Numbers &amp; Symbols
+          </label> <label>
+            <input type="checkbox" checkedLink={this.linkState('capitalize')} />
+	    {' '}Capitalize
           </label>
         </div>
         <div className="actions">
@@ -88,7 +95,7 @@ var PasswordGenerator = React.createClass({
           <span className="clearfix" />
         </div>
         <PasswordList length={this.state.length} number={this.state.number}
-          substitute={this.state.substitute} ref="passwordList" />
+          substitute={this.state.substitute} capitalize={this.state.capitalize} ref="passwordList" />
       </div>
     );
   }
